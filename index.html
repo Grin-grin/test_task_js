@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Infotecs | Тестовое задание</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script defer src="js/test_task.js"></script>
+</head>
+<body>
+    <header class="header container">
+        <img src="img/img.png" alt="Infotecs" class="header__logo">
+        <h1 class="header__title">
+            Тестовое задание для стажера на позицию <br>
+            «Программист на языке JS»
+        </h1>
+    </header>
+    <main class="main container">
+        <div class="main__technical-task technical-task">
+            <h2 class="main__title">
+                Техническое задание
+            </h2>
+            <section class="main__section section">
+                <h3 class="section__title">
+                    Дано:
+                </h3>
+                <div class="section__accordion">
+                    <p class="section__description description">
+                        JS, CSS (SCSS, SASS), JSON с данными
+                    </p>
+                    <p class="section__description description">
+                        <strong>
+                            Максимальное время на выполнение задания –  2 недели.
+                        </strong>
+                    </p>
+                </div>
+            </section>
+            <section class="main__section section">
+                <h3 class="section__title">
+                    Основные цели:
+                </h3>
+                <div class="section__accordion">
+                    <ul class="section__list">
+                        <li class="section__item">
+                            На основе имеющегося массива данных, создать таблицу шириной 50% от экрана;
+                        </li>
+                        <li class="section__item">
+                            Колонки в таблице:
+                            <ul>
+                                <li>
+                                    Имя (firstName),
+                                </li>
+                                <li>
+                                    Фамилия (lastName),
+                                </li>
+                                <li>
+                                    Описание (about),
+                                </li>
+                                <li>
+                                    Цвет глаз (eyeColor).
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="section__item">
+                            Данные колонки “about” должны отображаться в две строки,
+                            остальное обрезаем многоточием (...);
+                        </li>
+                        <li class="section__item">
+                            Каждая колонка должна иметь свойство сортировки;
+                        </li>
+                        <li class="section__item">
+                            При клике на строку в соседнем с таблицей DIV’е отобразить
+                            форму редактирования данных выбранной строки.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="main__section section">
+                <h3 class="section__title">
+                    Дополнительные цели:
+                </h3>
+                <div class="section__accordion">
+                    <ul class="section__list">
+                        <li class="section__item">
+                            Добавить постраничный вывод данных из предоставленного JSON (10 строк на страницу);
+                        </li>
+                        <li class="section__item">
+                            Добавить возможность показа/скрытия колонок;
+                        </li>
+                        <li class="section__item">
+                            В колонке “eyeColor” предоставлять данные в виде цвета,
+                            сохраняя возможность сортировки по значению.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <p class="main__description description">
+                Использование jQuery, Bootstrap и других фреймворков и библиотек не разрешено.
+                Комментирование кода с пояснениями — обязательно.
+                <br><br>
+                Решение задачи разместить на https://github.com/
+            </p>
+        </div>
+        <div class="main__completed-task completed-task">
+            <h2 class="main__title">Решение задания</h2>
+            <div class="main__completed-task__block">
+                <div class="completed-task__task">
+                    <table id="table" class="completed-task__table table">
+                        <thead class="table__thead">
+                            <tr>
+                                <th data-type="string" class="table__field">Имя</th>
+                                <th data-type="string" class="table__field">Фамилия</th>
+                                <th data-type="string" class="table__field">Описание</th>
+                                <th data-type="color" class="table__field">Цвет глаз</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                    </table>
+
+                    <ul id="pagination" class="completed-task__pagination">
+                    </ul>
+                </div>
+                <div class="completed-task__modal modal">
+                    <form class="modal__form">
+                        <h3>Редактирования строки в таблице</h3>
+                        <div class="modal__editing">
+                            <div class="modal__editing__input">
+                                <label class="modal__label" for="firstName">Имя</label>
+                                <input class="modal__input" id="firstName" type="text" name="firstName" placeholder="Введите имя" required>
+                            </div>
+                            <div class="modal__editing__input">
+                                <label class="modal__label" for="lastName">Фамилия</label>
+                                <input class="modal__input" id="lastName" type="text" name="lastName" placeholder="Введите фамилию" required>
+                            </div>
+                            <div class="modal__editing__input">
+                                <label class="modal__label" for="about">Опиание</label>
+                                <textarea class="modal__input" id="about" rows="6" name="about" placeholder="Введите описание" required></textarea>
+                            </div>
+                            <div class="modal__editing__input">
+                                <label class="modal__label" for="eyeColor">Цвет глаз</label>
+                                <input class="modal__input" id="eyeColor" type="text" name="eyeColor" placeholder="Введите цвет глаз" required>
+                            </div>
+                            <button class="modal__btn modal__btn_save">
+                                Сохранить
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer class="footer container"></footer>
+</body>
+</html>
